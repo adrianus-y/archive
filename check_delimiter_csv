@@ -1,0 +1,10 @@
+import csv
+
+file_path = 'D:/coding/INA_TweetsPPKM_Labeled_Pure.csv'
+
+# Baca beberapa baris pertama untuk mendeteksi delimiter
+with open(file_path, 'r', encoding='utf-8') as file:
+    sample = file.read(1024)  # Baca sebagian data
+    sniffer = csv.Sniffer()
+    delimiter = sniffer.sniff(sample).delimiter
+    print(f"Detected delimiter: '{delimiter}'")
